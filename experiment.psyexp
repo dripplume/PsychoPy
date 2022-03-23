@@ -7,7 +7,7 @@
     <Param val="auto" valType="str" updates="None" name="Data file delimiter"/>
     <Param val="u'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])" valType="code" updates="None" name="Data filename"/>
     <Param val="True" valType="bool" updates="None" name="Enable Escape"/>
-    <Param val="{'participant':'', 'session':'001'}" valType="code" updates="None" name="Experiment info"/>
+    <Param val="{'participant': '', 'session': '001'}" valType="code" updates="None" name="Experiment info"/>
     <Param val="True" valType="bool" updates="None" name="Force stereo"/>
     <Param val="True" valType="bool" updates="None" name="Full-screen window"/>
     <Param val="" valType="str" updates="None" name="HTML path"/>
@@ -25,9 +25,9 @@
     <Param val="False" valType="bool" updates="None" name="Show mouse"/>
     <Param val="height" valType="str" updates="None" name="Units"/>
     <Param val="" valType="str" updates="None" name="Use version"/>
-    <Param val="(1024, 768)" valType="list" updates="None" name="Window size (pixels)"/>
+    <Param val="[1536, 864]" valType="list" updates="None" name="Window size (pixels)"/>
     <Param val="avg" valType="str" updates="None" name="blendMode"/>
-    <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+    <Param val="1.0000, 1.0000, 1.0000" valType="color" updates="None" name="color"/>
     <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
     <Param val="100.1.1.1" valType="str" updates="None" name="elAddress"/>
     <Param val="FILTER_LEVEL_2" valType="str" updates="None" name="elDataFiltering"/>
@@ -46,7 +46,7 @@
     <Param val="4242" valType="num" updates="None" name="gpPort"/>
     <Param val="ioHub" valType="str" updates="None" name="keyboardBackend"/>
     <Param val="exp" valType="code" updates="None" name="logging level"/>
-    <Param val="MIDDLE_BUTTON" valType="list" updates="None" name="mgBlink"/>
+    <Param val="('MIDDLE_BUTTON',)" valType="list" updates="None" name="mgBlink"/>
     <Param val="CONTINUOUS" valType="str" updates="None" name="mgMove"/>
     <Param val="0.5" valType="num" updates="None" name="mgSaccade"/>
     <Param val="0.6" valType="num" updates="None" name="plConfidenceThreshold"/>
@@ -82,8 +82,8 @@
         <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
-      <TextComponent name="text">
-        <Param val="white" valType="color" updates="constant" name="color"/>
+      <TextComponent name="intro_text">
+        <Param val="-1.0000, -1.0000, -1.0000" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
@@ -92,7 +92,7 @@
         <Param val="Open Sans" valType="str" updates="constant" name="font"/>
         <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
         <Param val="0.03" valType="num" updates="constant" name="letterHeight"/>
-        <Param val="text" valType="code" updates="None" name="name"/>
+        <Param val="intro_text" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
         <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
@@ -103,7 +103,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="Welcome! This is a decision making experiment.&amp;#10;&amp;#10;Whatever decison you make, you'll have to back up with certainty.&amp;#10;&amp;#10;The level of certainty you have for your decision is based on your performance of a task. Your decision is considered certain if you perform well and score at least 10 points&amp;#10;&amp;#10;Indicate your decision to the following statement by pressing either 'y' for yes or 'n' for no.&amp;#10;&amp;#10;Atticus should get this research assisstant job!" valType="str" updates="constant" name="text"/>
+        <Param val="Welcome! This is a decision making experiment.&amp;#10;&amp;#10;Whatever decison you make, you'll have to back up with certainty.&amp;#10;&amp;#10;The level of certainty you have for your decision is based on your performance of a task. Your decision is considered certain if you perform well and score at least 10 points&amp;#10;&amp;#10;Indicate your decision to the following statement by pressing either 'y' for yes or 'n' for no.&amp;#10;&amp;#10;I would consider Atticus to be a very strong candidate." valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -231,10 +231,44 @@
         <Param val="True" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
+      <CodeComponent name="code_2">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="yes_trial_score = 0&amp;#10;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="yes_trial_score = 0;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="if (yes_resp.corr) {&amp;#10;    yes_trial_score += 1;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="if yes_resp.corr:&amp;#10;    yes_trial_score += 1" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code_2" valType="code" updates="None" name="name"/>
+      </CodeComponent>
     </Routine>
     <Routine name="feedback">
+      <CodeComponent name="decider">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="comp_message = &quot;nothing in here, nothing changed&quot;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="comp_message = &quot;nothing in here, nothing changed&quot;;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="if (((yes_trial_score === 10) || (yes_trial_score &gt; 10))) {&amp;#10;    comp_message = &quot;I agree! Stick with you guns! Better hire him! Thank you for participating! Press 'esc' to leave.&quot;;&amp;#10;} else {&amp;#10;    if (((yes_trial_score &lt; 10) &amp;&amp; (yes_trial_score &gt; 0))) {&amp;#10;        comp_message = &quot;Not so certain on the yes after all. Maybe an interview will help. Thank you for participating! Press 'esc' to leave.&quot;;&amp;#10;    } else {&amp;#10;        if (((no_trial_score === 10) || (no_trial_score &gt; 10))) {&amp;#10;            comp_message = &quot;Poah! You're pretty adamant on this! Best go for and interview and not rush to conclusions. Thank you for participating! Press 'esc' to leave.&quot;;&amp;#10;        } else {&amp;#10;            if (((no_trial_score &lt; 10) &amp;&amp; (no_trial_score &gt; 0))) {&amp;#10;                comp_message = &quot;Not so certain afterall! Better have an interview. Thank you for participating! Press 'esc' to leave.&quot;;&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;if ((yes_trial_score === no_trial_score)) {&amp;#10;    comp_message = &quot;You didn't even try! You must be afk, retry when you're back. Thank you for participating! Press 'esc' to leave.&quot;;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="if yes_trial_score == 10 or yes_trial_score &gt; 10:&amp;#10;    comp_message = &quot;I agree! Stick with you guns! Better hire him! Thank you for participating! Press 'esc' to leave.&quot;&amp;#10;elif yes_trial_score &lt; 10 and yes_trial_score &gt; 0:&amp;#10;    comp_message = &quot;Not so certain on the yes after all. Maybe an interview will help. Thank you for participating! Press 'esc' to leave.&quot;&amp;#10;elif no_trial_score == 10 or no_trial_score &gt; 10:&amp;#10;    comp_message = &quot;Poah! You're pretty adamant on this! Best go for and interview and not rush to conclusions. Thank you for participating! Press 'esc' to leave.&quot;&amp;#10;elif no_trial_score &lt; 10 and no_trial_score &gt; 0:&amp;#10;        comp_message = &quot;Not so certain afterall! Better have an interview. Thank you for participating! Press 'esc' to leave.&quot;&amp;#10;if yes_trial_score == no_trial_score:&amp;#10;    comp_message = &quot;You didn't even try! You must be afk, retry when you're back. Thank you for participating! Press 'esc' to leave.&quot;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="decider" valType="code" updates="None" name="name"/>
+      </CodeComponent>
       <TextComponent name="comp_text">
-        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="-1.0000, -1.0000, -1.0000" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
@@ -254,7 +288,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="$no_trial_score" valType="str" updates="constant" name="text"/>
+        <Param val="$comp_message&amp;#10;" valType="str" updates="set every repeat" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -279,7 +313,7 @@
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
       <TextComponent name="yes_message">
-        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="-1.0000, -1.0000, -1.0000" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
@@ -324,7 +358,7 @@
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
       <TextComponent name="no_message">
-        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="-1.0000, -1.0000, -1.0000" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
@@ -349,7 +383,6 @@
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
     </Routine>
-    <Routine name="yes_ready_2"/>
     <Routine name="no_ready_2"/>
   </Routines>
   <Flow>
@@ -368,7 +401,7 @@
     <Routine name="yes_ready"/>
     <LoopInitiator loopType="TrialHandler" name="trials_yes_loop">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[OrderedDict([('yes_word', 'red'), ('yes_color', 'red'), ('yes_cong', 1), ('yes_corr_resp', 'r')]), OrderedDict([('yes_word', 'green'), ('yes_color', 'green'), ('yes_cong', 1), ('yes_corr_resp', 'g')]), OrderedDict([('yes_word', 'blue'), ('yes_color', 'blue'), ('yes_cong', 1), ('yes_corr_resp', 'b')])]" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('yes_word', 'red'), ('yes_color', 'red'), ('yes_corr_resp', 'r')]), OrderedDict([('yes_word', 'green'), ('yes_color', 'green'), ('yes_corr_resp', 'g')]), OrderedDict([('yes_word', 'blue'), ('yes_color', 'blue'), ('yes_corr_resp', 'b')])]" valType="str"/>
       <Param name="conditionsFile" updates="None" val="yes - Sheet1.csv" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
