@@ -27,7 +27,7 @@
     <Param val="" valType="str" updates="None" name="Use version"/>
     <Param val="[1536, 864]" valType="list" updates="None" name="Window size (pixels)"/>
     <Param val="avg" valType="str" updates="None" name="blendMode"/>
-    <Param val="1.0000, 1.0000, 1.0000" valType="color" updates="None" name="color"/>
+    <Param val="-0.8000, -0.8000, -0.8000" valType="color" updates="None" name="color"/>
     <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
     <Param val="100.1.1.1" valType="str" updates="None" name="elAddress"/>
     <Param val="FILTER_LEVEL_2" valType="str" updates="None" name="elDataFiltering"/>
@@ -83,7 +83,7 @@
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
       <TextComponent name="intro_text">
-        <Param val="-1.0000, -1.0000, -1.0000" valType="color" updates="constant" name="color"/>
+        <Param val="-0.1000, -0.1000, -0.1000" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
@@ -103,15 +103,15 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="Welcome! This is a decision making experiment.&amp;#10;&amp;#10;Whatever decison you make, you'll have to back up with certainty.&amp;#10;&amp;#10;The level of certainty you have for your decision is based on your performance of a task. Your decision is considered certain if you perform well and score at least 10 points&amp;#10;&amp;#10;Indicate your decision to the following statement by pressing either 'y' for yes or 'n' for no.&amp;#10;&amp;#10;I would consider Atticus to be a very strong candidate." valType="str" updates="constant" name="text"/>
+        <Param val="Welcome! This is a decision making experiment.&amp;#10;&amp;#10;Whatever decison you make, you'll have to back up with certainty.&amp;#10;&amp;#10;The level of certainty you have for your decision is based on your performance of a task. Your decision is considered certain if you perform well and score at least 10 points.&amp;#10;&amp;#10;Indicate your decision to the following statement by pressing either 'y' for yes or 'n' for no.&amp;#10;&amp;#10;I would consider Atticus to be a very strong candidate." valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
       <CodeComponent name="code">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="trial_score = 0&amp;#10;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="trial_score = 0;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
@@ -172,8 +172,8 @@
       <CodeComponent name="no_adder">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="no_trial_score = 0" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="no_trial_score = 0;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
@@ -181,8 +181,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="if (no_resp.corr) {&amp;#10;    no_trial_score += 1;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="if no_resp.corr:&amp;#10;    no_trial_score += 1" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="if (no_resp.corr) {&amp;#10;    trial_score += 1;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="if no_resp.corr:&amp;#10;   trial_score += 1" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="no_adder" valType="code" updates="None" name="name"/>
       </CodeComponent>
@@ -234,8 +234,8 @@
       <CodeComponent name="code_2">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="yes_trial_score = 0&amp;#10;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="yes_trial_score = 0;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
@@ -243,8 +243,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="if (yes_resp.corr) {&amp;#10;    yes_trial_score += 1;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="if yes_resp.corr:&amp;#10;    yes_trial_score += 1" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="if (yes_resp.corr) {&amp;#10;    trial_score += 1;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="if yes_resp.corr:&amp;#10;    trial_score += 1" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="code_2" valType="code" updates="None" name="name"/>
       </CodeComponent>
@@ -255,8 +255,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="comp_message = &quot;nothing in here, nothing changed&quot;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="comp_message = &quot;nothing in here, nothing changed&quot;;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="if (((yes_trial_score === 10) || (yes_trial_score &gt; 10))) {&amp;#10;    comp_message = &quot;I agree! Stick with you guns! Better hire him! Thank you for participating! Press 'esc' to leave.&quot;;&amp;#10;} else {&amp;#10;    if (((yes_trial_score &lt; 10) &amp;&amp; (yes_trial_score &gt; 0))) {&amp;#10;        comp_message = &quot;Not so certain on the yes after all. Maybe an interview will help. Thank you for participating! Press 'esc' to leave.&quot;;&amp;#10;    } else {&amp;#10;        if (((no_trial_score === 10) || (no_trial_score &gt; 10))) {&amp;#10;            comp_message = &quot;Poah! You're pretty adamant on this! Best go for and interview and not rush to conclusions. Thank you for participating! Press 'esc' to leave.&quot;;&amp;#10;        } else {&amp;#10;            if (((no_trial_score &lt; 10) &amp;&amp; (no_trial_score &gt; 0))) {&amp;#10;                comp_message = &quot;Not so certain afterall! Better have an interview. Thank you for participating! Press 'esc' to leave.&quot;;&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;if ((yes_trial_score === no_trial_score)) {&amp;#10;    comp_message = &quot;You didn't even try! You must be afk, retry when you're back. Thank you for participating! Press 'esc' to leave.&quot;;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="if yes_trial_score == 10 or yes_trial_score &gt; 10:&amp;#10;    comp_message = &quot;I agree! Stick with you guns! Better hire him! Thank you for participating! Press 'esc' to leave.&quot;&amp;#10;elif yes_trial_score &lt; 10 and yes_trial_score &gt; 0:&amp;#10;    comp_message = &quot;Not so certain on the yes after all. Maybe an interview will help. Thank you for participating! Press 'esc' to leave.&quot;&amp;#10;elif no_trial_score == 10 or no_trial_score &gt; 10:&amp;#10;    comp_message = &quot;Poah! You're pretty adamant on this! Best go for and interview and not rush to conclusions. Thank you for participating! Press 'esc' to leave.&quot;&amp;#10;elif no_trial_score &lt; 10 and no_trial_score &gt; 0:&amp;#10;        comp_message = &quot;Not so certain afterall! Better have an interview. Thank you for participating! Press 'esc' to leave.&quot;&amp;#10;if yes_trial_score == no_trial_score:&amp;#10;    comp_message = &quot;You didn't even try! You must be afk, retry when you're back. Thank you for participating! Press 'esc' to leave.&quot;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="if (((trial_score === 10) || ((trial_score &gt; 10) &amp;&amp; (dec_yes === 1)))) {&amp;#10;    comp_message = &quot;Looks like that's a certain yes! Better hire him!&quot;;&amp;#10;} else {&amp;#10;    if ((((trial_score &lt; 10) &amp;&amp; (trial_score &gt; 0)) &amp;&amp; (dec_yes === 1))) {&amp;#10;        comp_message = &quot;Not so certain on the yes after all. Maybe an interview will help you decide for certain... for certain!&quot;;&amp;#10;    } else {&amp;#10;        if (((trial_score === 10) || ((trial_score &gt; 10) &amp;&amp; (dec_yes === 0)))) {&amp;#10;            comp_message = &quot;Poah! You're pretty adamant on this! Best go for and interview and not rush to conclusions.&quot;;&amp;#10;        } else {&amp;#10;            if ((((trial_score &lt; 10) &amp;&amp; (trial_score &gt; 0)) &amp;&amp; (dec_yes === 0))) {&amp;#10;                comp_message = &quot;Not so certain afterall! Better have an interview.&quot;;&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;if ((trial_score === 0)) {&amp;#10;    comp_message = &quot;You didn't even try! You must be afk, retry when you're back.&quot;;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="if trial_score == 10 or trial_score &gt; 10 and dec_yes == 1:&amp;#10;    comp_message = &quot;Looks like that's a certain yes! Better hire him!&quot;&amp;#10;elif trial_score &lt; 10 and trial_score &gt; 0 and dec_yes == 1:&amp;#10;    comp_message = &quot;Not so certain on the yes after all. Maybe an interview will help you decide for certain... for certain!&quot;&amp;#10;elif trial_score == 10 or trial_score &gt; 10 and dec_yes == 0:&amp;#10;    comp_message = &quot;Poah! You're pretty adamant on this! Best go for and interview and not rush to conclusions.&quot;&amp;#10;elif trial_score &lt; 10 and trial_score &gt; 0 and dec_yes == 0:&amp;#10;        comp_message = &quot;Not so certain afterall! Better have an interview.&quot;&amp;#10;if trial_score == 0:&amp;#10;    comp_message = &quot;You didn't even try! You must be afk, retry when you're back.&quot;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -268,7 +268,7 @@
         <Param val="decider" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <TextComponent name="comp_text">
-        <Param val="-1.0000, -1.0000, -1.0000" valType="color" updates="constant" name="color"/>
+        <Param val="-0.1000, -0.1000, -0.1000" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
@@ -289,6 +289,56 @@
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="$comp_message&amp;#10;" valType="str" updates="set every repeat" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <TextComponent name="score_feedback">
+        <Param val="-0.1000, -0.1000, -0.1000" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Open Sans" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="score_feedback" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0.1)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="$'Your score was: ' + str(trial_score)" valType="str" updates="set every repeat" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <TextComponent name="bye">
+        <Param val="-0.1000, -0.1000, -0.1000" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Open Sans" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.03" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="bye" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, -0.4)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="Thank you for participating!&amp;#10;&amp;#10;Press 'esc' to leave." valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -313,7 +363,7 @@
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
       <TextComponent name="yes_message">
-        <Param val="-1.0000, -1.0000, -1.0000" valType="color" updates="constant" name="color"/>
+        <Param val="-0.1000, -0.1000, -0.1000" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
@@ -321,7 +371,7 @@
         <Param val="None" valType="str" updates="constant" name="flip"/>
         <Param val="Open Sans" valType="str" updates="constant" name="font"/>
         <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
-        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="0.03" valType="num" updates="constant" name="letterHeight"/>
         <Param val="yes_message" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
@@ -333,7 +383,32 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="only respond to the color, not the word!&amp;#10;&amp;#10;press 'r' for red&amp;#10;press 'g' for green&amp;#10;press 'b' for blue&amp;#10;&amp;#10;try and make it to 10!&amp;#10;&amp;#10;Press 'r', 'g', or 'b' to continue" valType="str" updates="constant" name="text"/>
+        <Param val="It's looking good for Atticus! Time to back your decision with certainty.&amp;#10;&amp;#10;To score points, press the correct key. &amp;#10;Correct answers corrospond to the color of the word, not the word itself!&amp;#10;&amp;#10;press 'r' for red&amp;#10;press 'g' for green&amp;#10;press 'b' for blue&amp;#10;&amp;#10;Remember, your score is considered certain if you score 10 points!" valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <TextComponent name="yes_cont">
+        <Param val="-0.1000, -0.1000, -0.1000" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Open Sans" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.03" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="yes_cont" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, -0.4)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="Press 'r', 'g', or 'b' to continue" valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
@@ -358,7 +433,7 @@
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
       <TextComponent name="no_message">
-        <Param val="-1.0000, -1.0000, -1.0000" valType="color" updates="constant" name="color"/>
+        <Param val="-0.1000, -0.1000, -0.1000" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
@@ -366,7 +441,7 @@
         <Param val="None" valType="str" updates="constant" name="flip"/>
         <Param val="Open Sans" valType="str" updates="constant" name="font"/>
         <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
-        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="0.03" valType="num" updates="constant" name="letterHeight"/>
         <Param val="no_message" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
@@ -378,12 +453,36 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="only respond to the word, not the color!&amp;#10;&amp;#10;press 'r' for red&amp;#10;press 'g' for green&amp;#10;press 'b' for blue&amp;#10;&amp;#10;try and make it to 10!&amp;#10;&amp;#10;Press 'r', 'g', or 'b' to continue" valType="str" updates="constant" name="text"/>
+        <Param val="It's not looking good for Atticus! Time to back your decision with certainty.&amp;#10;&amp;#10;To score points, press the correct key. &amp;#10;Correct answers corrospond to the color of the word, not the word itself!&amp;#10;&amp;#10;press 'r' for red&amp;#10;press 'g' for green&amp;#10;press 'b' for blue&amp;#10;&amp;#10;Remember, your score is considered certain if you score 10 points!" valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <TextComponent name="no_cont">
+        <Param val="-0.1000, -0.1000, -0.1000" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Open Sans" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.03" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="no_cont" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, -0.4)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="Press 'r', 'g', or 'b' to continue" valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
     </Routine>
-    <Routine name="no_ready_2"/>
   </Routines>
   <Flow>
     <Routine name="intro"/>
